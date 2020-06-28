@@ -12,19 +12,19 @@
 
 5. Enable it by running this command:
 
-		launchctl load "$HOME/Library/LaunchAgents/com.tjluoma.growl-battery-warning.plist"
+	launchctl load "$HOME/Library/LaunchAgents/com.tjluoma.growl-battery-warning.plist"
 
 ## Need to stop it for awhile?
 
-		launchctl unload "$HOME/Library/LaunchAgents/com.tjluoma.growl-battery-warning.plist"
+	launchctl unload "$HOME/Library/LaunchAgents/com.tjluoma.growl-battery-warning.plist"
 
 This will stop it until you run the `launchctl load` command again, or logout/login, or reboot/login.
 
 ## Want to stop it forever?
 
-		launchctl unload "$HOME/Library/LaunchAgents/com.tjluoma.growl-battery-warning.plist"
+	launchctl unload "$HOME/Library/LaunchAgents/com.tjluoma.growl-battery-warning.plist"
 
-		mv "$HOME/Library/LaunchAgents/com.tjluoma.growl-battery-warning.plist" "$HOME/.Trash/"
+	mv "$HOME/Library/LaunchAgents/com.tjluoma.growl-battery-warning.plist" "$HOME/.Trash/"
 
 
 ## "I want to change the threshold for when I get warned!"
@@ -32,13 +32,13 @@ This will stop it until you run the `launchctl load` command again, or logout/lo
 
 Edit `/usr/local/bin/growl-battery-warning.sh` in a text editor and change this line:
 
-		WARNING_THRESHOLD='40'
+	WARNING_THRESHOLD='40'
 
 to something else.
 
 This would make it 30%:
 
-		WARNING_THRESHOLD='30'
+	WARNING_THRESHOLD='30'
 
 Note that you do ***not*** want to put the `%` sign in there, just a whole number between 1-100.
 
@@ -46,16 +46,16 @@ Note that you do ***not*** want to put the `%` sign in there, just a whole numbe
 
 1. Unload the .plist
 
-		launchctl unload "$HOME/Library/LaunchAgents/com.tjluoma.growl-battery-warning.plist"
+	launchctl unload "$HOME/Library/LaunchAgents/com.tjluoma.growl-battery-warning.plist"
 
 2. Edit the .plist in a text editor or [LaunchControl](https://www.soma-zone.com/LaunchControl/). The '60' below means 'once every 60 seconds'. Feel free to adjust to your liking. Save the .plist once you have edited the file.
 
-		<key>StartInterval</key>
-		<integer>60</integer>
+	<key>StartInterval</key>
+	<integer>60</integer>
 
 
 
 3. Reload the plist:
 
-		launchctl load "$HOME/Library/LaunchAgents/com.tjluoma.growl-battery-warning.plist"
+	launchctl load "$HOME/Library/LaunchAgents/com.tjluoma.growl-battery-warning.plist"
 
